@@ -1,11 +1,8 @@
 import { useNavigation } from '@react-navigation/native'
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { Button, TextInput, View } from 'react-native'
-import WebView from 'react-native-webview'
+import { useCallback, useState } from 'react'
+import { Button } from 'react-native'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components/native'
-import { httpClient } from '../../http/httpClient'
-import { loginClient } from '../clients/authClients'
 import { loginSucceeded } from '../slices/authSlice'
 
 const Wrapper = styled.View`
@@ -28,7 +25,7 @@ export const LoginScreen = () => {
     } catch (error) {
       console.error(error)
     }
-  }, [jwt])
+  }, [jwt, dispatch, navigation])
 
   const isLoginDisabled: boolean = !jwt
 

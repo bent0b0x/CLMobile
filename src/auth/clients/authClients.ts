@@ -1,6 +1,4 @@
 import axios from 'axios'
-import { httpClient } from '../../http/httpClient'
-import { buildUrlEncodedFormBody } from '../utils/authUtils'
 
 interface LoginArgs {
   jwt: string
