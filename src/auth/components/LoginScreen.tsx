@@ -19,7 +19,6 @@ const StyledTextInput = styled.TextInput`
 export const LoginScreen = () => {
   const navigation = useNavigation()
   const dispatch = useDispatch()
-  const [user, setUser] = useState<string | null>(null)
   const [jwt, setJwt] = useState<string>()
 
   const handleLoginPress = useCallback(async () => {
