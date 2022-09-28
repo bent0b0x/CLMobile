@@ -1,18 +1,8 @@
-import { useEffect, useState } from 'react'
 import { Text } from 'react-native'
-import { useSelector } from 'react-redux'
-import { loginClient } from '../../auth/clients/authClients'
-import { RootState } from '../../store/store'
+import { useProfileData } from '../hooks/useProfileData'
 
 export const UserProfile = () => {
-  const [user, setUser] = useState(null)
-  const jwt = useSelector<RootState, string>((state) => state.auth.jwt)
-
-  useEffect(() => {
-    loginClient({ jwt }).then(({ data }) => {
-      setUser(data)
-    })
-  }, [jwt])
+  const { data: user } = useProfileData()
 
   return <Text>{JSON.stringify(user)}</Text>
 }

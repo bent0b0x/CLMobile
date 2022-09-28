@@ -19,7 +19,7 @@ export const LoginScreen = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList, 'login'>>()
   const dispatch = useDispatch()
-  const [jwt, setJwt] = useState<string>()
+  const [jwt, setJwt] = useState<string>('')
 
   const handleLoginPress = useCallback(async () => {
     try {
