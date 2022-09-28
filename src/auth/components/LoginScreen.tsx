@@ -1,8 +1,10 @@
 import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { useCallback, useState } from 'react'
 import { Button } from 'react-native'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components/native'
+import { RootStackParamList } from '../../../App'
 import { loginSucceeded } from '../slices/authSlice'
 
 const Wrapper = styled.View`
@@ -14,7 +16,8 @@ const StyledTextInput = styled.TextInput`
 `
 
 export const LoginScreen = () => {
-  const navigation = useNavigation()
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList, 'login'>>()
   const dispatch = useDispatch()
   const [jwt, setJwt] = useState<string>()
 
