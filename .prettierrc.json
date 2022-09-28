@@ -1,5 +1,5 @@
 {
   "parser": "typescript",
   "trailingComma": "es5",
-  "semi": [true, "never", "ignore-interfaces"]
+  "semi": true
 }

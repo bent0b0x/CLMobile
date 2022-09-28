@@ -1,19 +1,19 @@
-const API_URL = `https://api.ussquash.com/`
+import axios, { AxiosRequestConfig } from 'axios'
+
+const API_URL = `https://api.ussquash.com`
 
 interface HttpRequestInit extends Omit<RequestInit, 'body'> {
-  body?: object
+  body?: object | string
 }
 
 export const httpClient = (
   resource: string,
-  options: HttpRequestInit
-): Promise<Response> => {
-  const { body, ...restOptions } = options
-  const finalOptions: RequestInit = { ...restOptions }
-
-  if (body) {
-    finalOptions.body = JSON.stringify(body)
-  }
-
-  return fetch(`${API_URL}/resource`, finalOptions)
+  options: AxiosRequestConfig
+): void => {
+  // const { body, ...restOptions } = options
+  // const finalOptions: RequestInit = { ...restOptions }
+  // finalOptions.body = typeof body === 'object' ? JSON.stringify(body) : body
+  // return axios({
+  //   url: `${API_URL}${resource}`
+  // })
 }
