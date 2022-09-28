@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Button } from 'react-native'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components/native'
@@ -31,6 +31,13 @@ export const LoginScreen = () => {
   }, [jwt, dispatch, navigation])
 
   const isLoginDisabled: boolean = !jwt
+
+  useEffect(() => {
+    if (jwt) {
+      handleLoginPress()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [handleLoginPress])
 
   return (
     <Wrapper>
