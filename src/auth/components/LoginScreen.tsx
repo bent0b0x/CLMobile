@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Button, TextInput, View } from 'react-native'
 import WebView from 'react-native-webview'
@@ -16,13 +17,15 @@ const StyledTextInput = styled.TextInput`
 `
 
 export const LoginScreen = () => {
+  const navigation = useNavigation()
   const dispatch = useDispatch()
   const [user, setUser] = useState<string | null>(null)
-  const [jwt, setJwt] = useState<string>('')
+  const [jwt, setJwt] = useState<string>()
 
   const handleLoginPress = useCallback(async () => {
     try {
       dispatch(loginSucceeded({ jwt }))
+      navigation.navigate('profile')
     } catch (error) {
       console.error(error)
     }

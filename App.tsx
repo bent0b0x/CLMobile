@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { LoginScreen } from './src/auth/components/LoginScreen'
 import { Provider } from 'react-redux'
 import { store } from './src/store/store'
+import { UserProfile } from './src/profile/components/UserProfile'
 
 const Stack = createNativeStackNavigator()
 
@@ -14,6 +15,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="login" component={LoginScreen} />
+          <Stack.Screen name="profile" component={UserProfile} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
