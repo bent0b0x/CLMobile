@@ -1,6 +1,6 @@
 const BASE_API_URL = 'https://api.ussquash.com/'
 
-export const createJwtAuthHttpClient = ({ jwt }: { jwt: string }) => {
+export const createJwtAuthHttpClient = ({ jwt }: { jwt: string | null }) => {
   const httpClient = async <ResponseType>(
     path: string,
     init: RequestInit = {}

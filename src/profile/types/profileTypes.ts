@@ -104,3 +104,38 @@ export interface MainAffiliation {
   expDate: Date
   customId: number
 }
+
+export interface Match {
+  rowNum: string
+  Matchid: number
+  MatchDate: string
+  UpdateDate: string
+  Descr: string
+  Score: string
+  Status: string
+  WhatKind: string
+  wid1: number
+  wid2: number
+  oid1: number
+  oid2: number
+  hplayer1: string
+  hplayer2: null
+  vplayer1: string
+  vplayer2: null
+  Winner: string
+  DivisionDescr: string
+  RoundDescr: string
+  wTeamName: string
+  oTeamName: string
+  PositionPlayed: string
+  ClubName: string
+  Calcmethodid: number
+  Sportid: number
+  SportDescr: string
+  event: string
+  Leagueid: number
+  OrganizationID: number
+  TournamentID: number
+  EventID: number
+  LadderID: number
+}
